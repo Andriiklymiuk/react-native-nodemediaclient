@@ -25,6 +25,7 @@
     [_np setNodePublisherDelegate:self];
     _autopreview = NO;
     _dynamicRateEnable = YES;
+    _autoReconnectWaitTimeout = 1000;
     _outputUrl = nil;
     _camera = nil;
     _audio = nil;
@@ -118,6 +119,7 @@
 }
 
 -(int)start {
+  _np.autoReconnectWaitTimeout = 1000;
   return [_np start];
 }
 
