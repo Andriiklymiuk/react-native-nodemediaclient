@@ -41,9 +41,10 @@ public class RCTNodeCameraView extends NodeCameraView implements LifecycleEventL
     private int videoProfile = NodePublisher.VIDEO_PROFILE_BASELINE;
     private boolean videoFrontMirror = false;
 
-    private boolean denoise = false;
+    private boolean denoise = true;
     private boolean dynamicRateEnable = true;
     private int smoothSkinLevel = 0;
+    private int autoReconnectWaitTimeout = 1000;
 
 
     public RCTNodeCameraView(@NonNull ThemedReactContext context) {
@@ -95,6 +96,7 @@ public class RCTNodeCameraView extends NodeCameraView implements LifecycleEventL
 
     public void setDenoise(boolean denoise) {
         this.denoise = denoise;
+        mNodePublisher.setDenoiseEnable(denoise);
     }
 
     public void setDynamicRateEnable(boolean dynamicRateEnable) {
@@ -117,6 +119,9 @@ public class RCTNodeCameraView extends NodeCameraView implements LifecycleEventL
     }
 
     public int start() {
+        mNodePublisher.setDynamicRateEnable(this.dynamicRateEnable);
+        mNodePublisher.setDenoiseEnable(this.denoise);
+        mNodePublisher.setAutoReconnectWaitTimeout(this.autoReconnectWaitTimeout);
         return mNodePublisher.start();
     }
 
