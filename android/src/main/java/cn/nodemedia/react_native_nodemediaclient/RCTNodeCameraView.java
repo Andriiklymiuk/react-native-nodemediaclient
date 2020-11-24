@@ -118,6 +118,7 @@ public class RCTNodeCameraView extends NodeCameraView implements LifecycleEventL
     }
 
     public int start() {
+        mNodePublisher.setDynamicRateEnable(this.dynamicRateEnable);
         mNodePublisher.setDenoiseEnable(this.denoise);
         return mNodePublisher.start();
     }
