@@ -121,7 +121,8 @@
 
 -(int)start {
   _np.denoiseEnable = _denoise;
-  _np.autoReconnectWaitTimeout = 1000;
+  _np.dynamicRateEnable = _dynamicRateEnable;
+  _np.autoReconnectWaitTimeout = _autoReconnectWaitTimeout;
   return [_np start];
 }
 
