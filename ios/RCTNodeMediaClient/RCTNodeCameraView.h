@@ -17,7 +17,7 @@
 @property (strong,nonatomic) NSDictionary *audio;
 @property (strong,nonatomic) NSDictionary *video;
 @property (nonatomic) BOOL denoise;
-@property(nonatomic) NSInteger autoReconnectWaitTimeout;
+@property (nonatomic) NSInteger autoReconnectWaitTimeout;
 @property (nonatomic) BOOL dynamicRateEnable;
 @property (nonatomic) NSInteger smoothSkinLevel;
 @property (strong, nonatomic) NSString *cryptoKey;
