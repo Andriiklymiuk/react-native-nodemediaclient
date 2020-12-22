@@ -1,5 +1,0 @@
-sourceControl {
-    gitRepository("https://github.com/Andriiklymiuk/NodeMediaClient-Android.git") {
-        producesModule("com.github.NodeMedia")
-    }
-}
